@@ -1,0 +1,17 @@
+C:\Users\Riley\source\repos\TylerClicker2\bin\Debug\net9.0-windows\TylerClicker2.exe
+C:\Users\Riley\source\repos\TylerClicker2\bin\Debug\net9.0-windows\TylerClicker2.deps.json
+C:\Users\Riley\source\repos\TylerClicker2\bin\Debug\net9.0-windows\TylerClicker2.runtimeconfig.json
+C:\Users\Riley\source\repos\TylerClicker2\bin\Debug\net9.0-windows\TylerClicker2.dll
+C:\Users\Riley\source\repos\TylerClicker2\bin\Debug\net9.0-windows\TylerClicker2.pdb
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.Form1.resources
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.Properties.Resources.resources
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.csproj.GenerateResource.cache
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.AssemblyInfoInputs.cache
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.AssemblyInfo.cs
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.csproj.CoreCompileInputs.cache
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.dll
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\refint\TylerClicker2.dll
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.pdb
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.genruntimeconfig.cache
+C:\Users\Riley\source\repos\TylerClicker2\obj\Debug\net9.0-windows\ref\TylerClicker2.dll
