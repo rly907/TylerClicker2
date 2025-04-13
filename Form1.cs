@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace TylerClicker2
 {
     public partial class Form1 : Form
@@ -9,6 +10,14 @@ namespace TylerClicker2
 
         int AutoClicks = 1;
         int ClickBonus = 1;
+        int AutoPrice = 100;
+        int BonusPrice = 100;
+        int PrestigeInt;
+        double PrestigePrice = 1000;
+
+
+        private int sharedVariable = 1;
+
 
         private int _score;
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -19,13 +28,30 @@ namespace TylerClicker2
             {
                 _score = value;
                 UpdateScoreText();
+
             }
+        }
+
+        private void OpenForm2()
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+        private void Form2_VariableUpdated(object sender, int newValue)
+        {
+            sharedVariable = newValue;
+            PrestigeLabel.Text = $"Prestige Tokens: {sharedVariable}";
         }
 
         public Form1()
         {
             InitializeComponent();
             InitializeTimer();
+            GlobalVariables.OnVariableUpdated += GlobalVariables_OnVariableUpdated;
+        }
+        private void GlobalVariables_OnVariableUpdated(object sender, int newValue)
+        {
+            PrestigeLabel.Text = $"Prestige Tokens: {newValue}";
         }
         private void InitializeTimer()
         {
@@ -35,10 +61,12 @@ namespace TylerClicker2
             timer.Start();
         }
 
+
         private void TickEvent()
         {
             Score += AutoClicks;
-            UpdateUpgradeText();
+
+
         }
 
         private void Timer_Tick(object? sender, EventArgs e)
@@ -67,18 +95,41 @@ namespace TylerClicker2
         {
             AutoLabel.Text = $"Issac Cats: {AutoClicks} (Auto Clicks)";
             BonusLabel.Text = $"Lucy Cats: {ClickBonus - 1} (Click Bonus)";
+            AutoBtn.Text = $"+1 Issac Cat (Auto) - {AutoPrice}";
+            BonusBtn.Text = $"+1 Lucy Cat (Click) - {BonusPrice}";
         }
 
         private void AutoBtn_Click(object sender, EventArgs e)
         {
-            AutoClicks++;
-            UpdateUpgradeText();
+            if (Score >= AutoPrice)
+            {
+                Score -= AutoPrice;
+                AutoPrice += 100;
+                AutoClicks++;
+                UpdateUpgradeText();
+            }
         }
 
         private void BonusBtn_Click(object sender, EventArgs e)
         {
-            ClickBonus++;
-            UpdateUpgradeText();
+            if (Score >= BonusPrice)
+            {
+                Score -= BonusPrice;
+                BonusPrice += 100;
+                ClickBonus++;
+                UpdateUpgradeText();
+            }
+        }
+
+        private void PrestigeButton_Click(object sender, EventArgs e)
+        {
+            GlobalVariables.SharedVariable++;
+            PrestigeLabel.Text = $"Prestige Tokens: {GlobalVariables.SharedVariable}";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenForm2();
         }
     }
 }

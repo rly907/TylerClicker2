@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TylerClicker2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b2141d7ba777e92c3dd23ac72b1b769eca62768")]
 [assembly: System.Reflection.AssemblyProductAttribute("TylerClicker2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TylerClicker2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

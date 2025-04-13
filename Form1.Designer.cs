@@ -38,6 +38,9 @@
             BonusLabel = new Label();
             AutoBtn = new Button();
             BonusBtn = new Button();
+            PrestigeLabel = new Label();
+            PrestigeButton = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -91,9 +94,9 @@
             AutoLabel.Font = new Font("Segoe UI", 12F);
             AutoLabel.Location = new Point(82, 291);
             AutoLabel.Name = "AutoLabel";
-            AutoLabel.Size = new Size(114, 28);
+            AutoLabel.Size = new Size(228, 28);
             AutoLabel.TabIndex = 4;
-            AutoLabel.Text = "Issac Cats: 0";
+            AutoLabel.Text = "Issac Cats: 0 (Auto Clicks)";
             // 
             // BonusLabel
             // 
@@ -101,17 +104,17 @@
             BonusLabel.Font = new Font("Segoe UI", 12F);
             BonusLabel.Location = new Point(82, 356);
             BonusLabel.Name = "BonusLabel";
-            BonusLabel.Size = new Size(113, 28);
+            BonusLabel.Size = new Size(229, 28);
             BonusLabel.TabIndex = 5;
-            BonusLabel.Text = "Lucy Cats: 0";
+            BonusLabel.Text = "Lucy Cats: 0 (Click Bonus)";
             // 
             // AutoBtn
             // 
             AutoBtn.Location = new Point(274, 79);
             AutoBtn.Name = "AutoBtn";
-            AutoBtn.Size = new Size(166, 29);
+            AutoBtn.Size = new Size(216, 29);
             AutoBtn.TabIndex = 6;
-            AutoBtn.Text = "+1 Issac Cat (Auto)";
+            AutoBtn.Text = "+1 Issac Cat (Auto) - 100";
             AutoBtn.UseVisualStyleBackColor = true;
             AutoBtn.Click += AutoBtn_Click;
             // 
@@ -119,17 +122,50 @@
             // 
             BonusBtn.Location = new Point(274, 114);
             BonusBtn.Name = "BonusBtn";
-            BonusBtn.Size = new Size(166, 29);
+            BonusBtn.Size = new Size(216, 29);
             BonusBtn.TabIndex = 7;
-            BonusBtn.Text = "+1 Lucy Cat (Click)";
+            BonusBtn.Text = "+1 Lucy Cat (Click) - 100";
             BonusBtn.UseVisualStyleBackColor = true;
             BonusBtn.Click += BonusBtn_Click;
+            // 
+            // PrestigeLabel
+            // 
+            PrestigeLabel.AutoSize = true;
+            PrestigeLabel.Font = new Font("Segoe UI", 15F);
+            PrestigeLabel.Location = new Point(693, 402);
+            PrestigeLabel.Name = "PrestigeLabel";
+            PrestigeLabel.Size = new Size(212, 35);
+            PrestigeLabel.TabIndex = 9;
+            PrestigeLabel.Text = "Prestige Tokens: 0";
+            // 
+            // PrestigeButton
+            // 
+            PrestigeButton.Location = new Point(755, 370);
+            PrestigeButton.Name = "PrestigeButton";
+            PrestigeButton.Size = new Size(150, 29);
+            PrestigeButton.TabIndex = 10;
+            PrestigeButton.Text = "+1 Prestige - 1000";
+            PrestigeButton.UseVisualStyleBackColor = true;
+            PrestigeButton.Click += PrestigeButton_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(645, 260);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 11;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(917, 446);
+            Controls.Add(button1);
+            Controls.Add(PrestigeButton);
+            Controls.Add(PrestigeLabel);
             Controls.Add(BonusBtn);
             Controls.Add(AutoBtn);
             Controls.Add(BonusLabel);
@@ -159,5 +195,8 @@
         private Label BonusLabel;
         private Button AutoBtn;
         private Button BonusBtn;
+        private Label PrestigeLabel;
+        private Button PrestigeButton;
+        private Button button1;
     }
 }
