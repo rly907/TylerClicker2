@@ -40,7 +40,7 @@
             BonusBtn = new Button();
             PrestigeLabel = new Label();
             PrestigeButton = new Button();
-            button1 = new Button();
+            OpenShop = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -114,7 +114,7 @@
             AutoBtn.Name = "AutoBtn";
             AutoBtn.Size = new Size(216, 29);
             AutoBtn.TabIndex = 6;
-            AutoBtn.Text = "+1 Issac Cat (Auto) - 100";
+            AutoBtn.Text = "Issac auto bonus";
             AutoBtn.UseVisualStyleBackColor = true;
             AutoBtn.Click += AutoBtn_Click;
             // 
@@ -124,7 +124,7 @@
             BonusBtn.Name = "BonusBtn";
             BonusBtn.Size = new Size(216, 29);
             BonusBtn.TabIndex = 7;
-            BonusBtn.Text = "+1 Lucy Cat (Click) - 100";
+            BonusBtn.Text = "Lucy click bonus";
             BonusBtn.UseVisualStyleBackColor = true;
             BonusBtn.Click += BonusBtn_Click;
             // 
@@ -144,26 +144,26 @@
             PrestigeButton.Name = "PrestigeButton";
             PrestigeButton.Size = new Size(150, 29);
             PrestigeButton.TabIndex = 10;
-            PrestigeButton.Text = "+1 Prestige - 1000";
+            PrestigeButton.Text = "Prestige";
             PrestigeButton.UseVisualStyleBackColor = true;
             PrestigeButton.Click += PrestigeButton_Click;
             // 
-            // button1
+            // OpenShop
             // 
-            button1.Location = new Point(645, 260);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 11;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            OpenShop.Location = new Point(755, 341);
+            OpenShop.Name = "OpenShop";
+            OpenShop.Size = new Size(150, 29);
+            OpenShop.TabIndex = 11;
+            OpenShop.Text = "Open Prestige Shop";
+            OpenShop.UseVisualStyleBackColor = true;
+            OpenShop.Click += OpenShop_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(917, 446);
-            Controls.Add(button1);
+            Controls.Add(OpenShop);
             Controls.Add(PrestigeButton);
             Controls.Add(PrestigeLabel);
             Controls.Add(BonusBtn);
@@ -197,6 +197,6 @@
         private Button BonusBtn;
         private Label PrestigeLabel;
         private Button PrestigeButton;
-        private Button button1;
+        private Button OpenShop;
     }
 }

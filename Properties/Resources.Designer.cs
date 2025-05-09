@@ -63,6 +63,26 @@ namespace TylerClicker2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image {
+            get {
+                object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_3880 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_3880", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IMG_3932 {
             get {
                 object obj = ResourceManager.GetObject("IMG_3932", resourceCulture);
@@ -83,9 +103,39 @@ namespace TylerClicker2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IMG_5383 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_5383", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ISsav {
+            get {
+                object obj = ResourceManager.GetObject("ISsav", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap zen_baATz79bHd {
             get {
                 object obj = ResourceManager.GetObject("zen_baATz79bHd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zen_zX3RLe1a9s {
+            get {
+                object obj = ResourceManager.GetObject("zen_zX3RLe1a9s", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

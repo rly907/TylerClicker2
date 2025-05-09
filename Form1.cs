@@ -8,20 +8,21 @@ namespace TylerClicker2
     {
         private System.Windows.Forms.Timer timer;
 
-        int AutoClicks = 1;
+        int AutoClicks = 0;
         int ClickBonus = 1;
-        int AutoPrice = 100;
-        int BonusPrice = 100;
-        int PrestigeInt;
-        double PrestigePrice = 1000;
+        int AutoPrice = 50;
+        int BonusPrice = 50;
+        int PrestigePrice = 5000;
+        int TimerInterval = 1000; // 1 second to start
+
 
 
         private int sharedVariable = 1;
 
 
-        private int _score;
+        private Int64 _score;
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public int Score
+        public Int64 Score
         {
             get { return _score; }
             set
@@ -48,6 +49,7 @@ namespace TylerClicker2
             InitializeComponent();
             InitializeTimer();
             GlobalVariables.OnVariableUpdated += GlobalVariables_OnVariableUpdated;
+            UpdateUpgradeText();
         }
         private void GlobalVariables_OnVariableUpdated(object sender, int newValue)
         {
@@ -56,22 +58,15 @@ namespace TylerClicker2
         private void InitializeTimer()
         {
             timer = new System.Windows.Forms.Timer();
-            timer.Interval = 1000; // 1000 ms = 1 second
+            timer.Interval = TimerInterval; // Can be changed using mittens
             timer.Tick += Timer_Tick;
             timer.Start();
         }
 
-
-        private void TickEvent()
-        {
-            Score += AutoClicks;
-
-
-        }
-
         private void Timer_Tick(object? sender, EventArgs e)
         {
-            TickEvent();
+            Score += AutoClicks;
+            Score = Convert.ToInt64(Convert.ToDouble(Score) * 1.1);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -82,7 +77,6 @@ namespace TylerClicker2
 
         private void UpdateScoreText()
         {
-
             scoreLbl.Text = $"Score: {Score}";
         }
 
@@ -97,6 +91,7 @@ namespace TylerClicker2
             BonusLabel.Text = $"Lucy Cats: {ClickBonus - 1} (Click Bonus)";
             AutoBtn.Text = $"+1 Issac Cat (Auto) - {AutoPrice}";
             BonusBtn.Text = $"+1 Lucy Cat (Click) - {BonusPrice}";
+            PrestigeButton.Text = $"+1 Prestige - {PrestigePrice}";
         }
 
         private void AutoBtn_Click(object sender, EventArgs e)
@@ -104,7 +99,7 @@ namespace TylerClicker2
             if (Score >= AutoPrice)
             {
                 Score -= AutoPrice;
-                AutoPrice += 100;
+                AutoPrice += 50;
                 AutoClicks++;
                 UpdateUpgradeText();
             }
@@ -115,7 +110,7 @@ namespace TylerClicker2
             if (Score >= BonusPrice)
             {
                 Score -= BonusPrice;
-                BonusPrice += 100;
+                BonusPrice += 50;
                 ClickBonus++;
                 UpdateUpgradeText();
             }
@@ -123,11 +118,20 @@ namespace TylerClicker2
 
         private void PrestigeButton_Click(object sender, EventArgs e)
         {
-            GlobalVariables.SharedVariable++;
-            PrestigeLabel.Text = $"Prestige Tokens: {GlobalVariables.SharedVariable}";
+            if (Score >= PrestigePrice)
+            {
+                Score = 0;
+                ClickBonus = 1;
+                AutoClicks = 0;
+                UpdateUpgradeText();
+                GlobalVariables.SharedVariable++;
+                PrestigeLabel.Text = $"Prestige Tokens: {GlobalVariables.SharedVariable}";
+                PrestigePrice += 5000;
+            }
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OpenShop_Click(object sender, EventArgs e)
         {
             OpenForm2();
         }
