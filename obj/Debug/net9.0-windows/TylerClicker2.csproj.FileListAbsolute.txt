@@ -36,3 +36,4 @@ C:\Users\Riley\Documents\TylerClicker2\obj\Debug\net9.0-windows\refint\TylerClic
 C:\Users\Riley\Documents\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.pdb
 C:\Users\Riley\Documents\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.genruntimeconfig.cache
 C:\Users\Riley\Documents\TylerClicker2\obj\Debug\net9.0-windows\ref\TylerClicker2.dll
+C:\Users\Riley\Documents\TylerClicker2\obj\Debug\net9.0-windows\TylerClicker2.Form3.resources

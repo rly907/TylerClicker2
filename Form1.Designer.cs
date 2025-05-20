@@ -41,6 +41,7 @@
             PrestigeLabel = new Label();
             PrestigeButton = new Button();
             OpenShop = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -158,11 +159,22 @@
             OpenShop.UseVisualStyleBackColor = true;
             OpenShop.Click += OpenShop_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(811, 9);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 12;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(917, 446);
+            Controls.Add(button1);
             Controls.Add(OpenShop);
             Controls.Add(PrestigeButton);
             Controls.Add(PrestigeLabel);
@@ -198,5 +210,6 @@
         private Label PrestigeLabel;
         private Button PrestigeButton;
         private Button OpenShop;
+        private Button button1;
     }
 }

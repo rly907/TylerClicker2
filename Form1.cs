@@ -164,15 +164,21 @@ namespace TylerClicker2
                         PrestigePrice /= 2;
                     }
                 }
-                UpdateUpgradeText();    
+                UpdateUpgradeText();
             }
-            
+
         }
 
         private void OpenShop_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2(this);
             form2.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
         }
     }
 }
