@@ -41,11 +41,14 @@
             label6 = new Label();
             pictureBox5 = new PictureBox();
             label7 = new Label();
+            pictureBox6 = new PictureBox();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -79,6 +82,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label2
             // 
@@ -99,6 +103,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // label3
             // 
@@ -113,17 +118,18 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.IMG_5383;
-            pictureBox3.Location = new Point(586, 103);
+            pictureBox3.Location = new Point(581, 103);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(147, 103);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(531, 209);
+            label4.Location = new Point(523, 209);
             label4.Name = "label4";
             label4.Size = new Size(249, 100);
             label4.TabIndex = 7;
@@ -133,7 +139,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(181, 34);
+            label5.Location = new Point(175, 34);
             label5.Name = "label5";
             label5.Size = new Size(439, 20);
             label5.TabIndex = 8;
@@ -149,6 +155,7 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 9;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // label6
             // 
@@ -169,6 +176,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 11;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // label7
             // 
@@ -180,11 +188,34 @@
             label7.Text = "Magic Dice\r\n1 in 100 chance to double score\r\n(every second)\r\nCost: 1 Token\r\n";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.explorer_jOD0Z6J240;
+            pictureBox6.Location = new Point(581, 307);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(147, 103);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 13;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(590, 413);
+            label8.Name = "label8";
+            label8.Size = new Size(126, 80);
+            label8.TabIndex = 14;
+            label8.Text = "Blue Light Detox\r\nblue is the poison\r\nred is the cure\r\nCost: 0 Token\r\n";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(788, 530);
+            Controls.Add(label8);
+            Controls.Add(pictureBox6);
             Controls.Add(label7);
             Controls.Add(pictureBox5);
             Controls.Add(label6);
@@ -205,6 +236,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -224,5 +256,7 @@
         private Label label6;
         private PictureBox pictureBox5;
         private Label label7;
+        private PictureBox pictureBox6;
+        private Label label8;
     }
 }

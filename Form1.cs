@@ -12,8 +12,8 @@ namespace TylerClicker2
         int ClickBonus = 1;
         int AutoPrice = 50;
         int BonusPrice = 50;
-        int PrestigePrice = 5000;
-        int TimerInterval = 1000; // 1 second to start
+        public static int PrestigePrice = 5000;
+        public static int TimerInterval = 1000; // 1 second to start
 
 
 
@@ -27,16 +27,22 @@ namespace TylerClicker2
             get { return _score; }
             set
             {
-                _score = value;
-                UpdateScoreText();
-
+                try
+                {
+                    _score = value;
+                    UpdateScoreText();
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("You hit the largest possible number and beat the game, Congrats!", "Good Game", MessageBoxButtons.OK);
+                    _score = 0; // Reset the score or take another appropriate action
+                    UpdateScoreText();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An unexpected error occurred: {ex.Message}", "You messed something up", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-        }
-
-        private void OpenForm2()
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
         }
         private void Form2_VariableUpdated(object sender, int newValue)
         {
@@ -66,7 +72,24 @@ namespace TylerClicker2
         private void Timer_Tick(object? sender, EventArgs e)
         {
             Score += AutoClicks;
-            Score = Convert.ToInt64(Convert.ToDouble(Score) * 1.1);
+            if (Items.ShinyIssacUnlocked == true)
+            {
+                for (int i = 0; i < Items.ShinyIssac; i++)
+                {
+                    Score = Convert.ToInt64(Convert.ToDouble(Score) * 1.1);
+                }
+            }
+            if (Items.MagicDiceUnlocked == true)
+            {
+                Random random = new Random();
+                int randomNumber = random.Next(1, 101);
+                if (randomNumber == 1)
+                {
+                    Score = Convert.ToInt64(Convert.ToDouble(Score) * 2);
+                    MessageBox.Show("Magic Dice Rolled a 1! Score Doubled");
+                }
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,7 +108,7 @@ namespace TylerClicker2
             Score += ClickBonus;
         }
 
-        private void UpdateUpgradeText()
+        public void UpdateUpgradeText()
         {
             AutoLabel.Text = $"Issac Cats: {AutoClicks} (Auto Clicks)";
             BonusLabel.Text = $"Lucy Cats: {ClickBonus - 1} (Click Bonus)";
@@ -121,19 +144,35 @@ namespace TylerClicker2
             if (Score >= PrestigePrice)
             {
                 Score = 0;
-                ClickBonus = 1;
-                AutoClicks = 0;
-                UpdateUpgradeText();
+                ClickBonus /= 2;
+                AutoClicks /= 2;
+
+                BonusPrice = ClickBonus * 50;
+                AutoPrice = AutoClicks * 50;
+
                 GlobalVariables.SharedVariable++;
                 PrestigeLabel.Text = $"Prestige Tokens: {GlobalVariables.SharedVariable}";
                 PrestigePrice += 5000;
+                if (PrestigePrice > 100000)
+                {
+                    PrestigePrice = 100000;
+                }
+                if (Items.CrueltySquadUnlocked == true)
+                {
+                    for (int i = 0; i < Items.CrueltySquad; i++)
+                    {
+                        PrestigePrice /= 2;
+                    }
+                }
+                UpdateUpgradeText();    
             }
             
         }
 
         private void OpenShop_Click(object sender, EventArgs e)
         {
-            OpenForm2();
+            Form2 form2 = new Form2(this);
+            form2.Show();
         }
     }
 }
